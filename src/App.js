@@ -13,6 +13,8 @@ import SlowTimer from './components/SlowTimer';
 import Splash from './components/Splash';
 import Guide from './components/Guide';
 import Progress from './components/Progress';
+import ProgressChart from './components/ProgressChart';
+
 
 
 
@@ -38,6 +40,10 @@ function App() {
 
       <Route path="/progress">
         <Progress />
+      </Route>
+
+      <Route path="/progresschart">
+        <ProgressChart />
       </Route>
 
       <Route path="/fasttimer">
