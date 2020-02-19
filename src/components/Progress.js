@@ -10,11 +10,10 @@ import ProgressChart from './ProgressChart';
 export default function Progress() {
     return(
         <div>
-    <header>
-        <h1>This is your PROGRESS</h1>
-    </header> 
+        <Link to="/">HOME</Link>
+        <Link to="#">GUIDE</Link>
         <ProgressChart />
-    <Link to="/">HOME</Link>
+    <Link to="/fasttimer">START</Link>
     </div>
     );
 }

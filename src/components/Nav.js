@@ -1,17 +1,14 @@
 import React from 'react'; 
-
 import {
     Link
   } from "react-router-dom";
 
 // destructuring version 
-export default function Splash() {
+export default function Nav() {
     return(
         <div>
-    <header>
-        <h1>UNTITLED KEGEL APP</h1>
-    </header> 
-    <Link to="/guide">START</Link>
+    <Link to="/">HOME</Link>
+    <Link to="/guide">GUIDE</Link>
 
         </div>
     

@@ -66,7 +66,7 @@ const SlowTimer = () => {
     return (
         <div className='app'>
         <Link to="/progress">HOME</Link>
-        <h3>SLOW TIMER</h3>
+        <Link to="#">TIMER-SLOW</Link>
         <Link to="/guide">GUIDE</Link>
 
             <div className="time">

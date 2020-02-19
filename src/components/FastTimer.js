@@ -62,9 +62,11 @@ const FastTimer = () => {
 
     return (
         <div className='app'>
+        
         <Link to="/progress">HOME</Link>
-        <h3>FAST TIMER</h3>
+        <Link to="#">TIMER-FAST</Link>
         <Link to="/guide">GUIDE</Link>
+        
 
             <div className="time">
                 <div className="row">

@@ -14,6 +14,8 @@ import Splash from './components/Splash';
 import Guide from './components/Guide';
 import Progress from './components/Progress';
 import ProgressChart from './components/ProgressChart';
+import Nav from './components/Nav';
+
 
 
 
@@ -52,6 +54,10 @@ function App() {
 
       <Route path="/slowtimer">
         <SlowTimer />
+      </Route>
+
+      <Route path="/nav">
+        <Nav />
       </Route>
 
 

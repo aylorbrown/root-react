@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #fc715e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,6 +22,14 @@
 .App-link {
   color: #61dafb;
 }
+
+
+@font-face {
+  font-family: Toren Mono;
+  src: url(/public/Toren-Mono.otf/);
+
+}
+
 
 @keyframes App-logo-spin {
   from {
@@ -41,10 +44,42 @@
 
 /*  new  */
 
+body {
+  font-family: Toren Mono;
+
+  background-color: #fc715e;
+  color: #1c1aa9;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #1c1aa9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 36px;
+}
+
+p {
+font-size: 36px;
+
+  width: 600px;
+}
+
+h1, h3 {
+  color: #1c1aa9;
+}
 
 .app {
   text-align: center;
-  background-color: #282c34;
+  background-color: #fc715e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
