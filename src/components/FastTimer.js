@@ -6,7 +6,12 @@ import {
   } from "react-router-dom";
 
 
-const FastTimer = () => {
+const FastTimer = (
+    {
+    value,
+    setValue
+    }
+) => {
     const MAXSECONDS = 5;
     // initialize three states - seconds, isActive, reps. Seconds will
     // store the value of the timer, isActive will store the 
@@ -14,7 +19,7 @@ const FastTimer = () => {
     // reps will store the value of the number of reps - stop timer after x many reps 
     const [seconds, setSeconds] = useState(MAXSECONDS);
     const [isActive, setIsActive] = useState(false);
-    const [reps, setNumberReps] = useState(10);
+    const [reps, setNumberReps] = useState(2);
     const [activity, setActivity] = useState('squeeze');
     let history = useHistory();
 
@@ -28,7 +33,7 @@ const FastTimer = () => {
     function reset() {
         setSeconds(MAXSECONDS);
         setIsActive(false);
-        setNumberReps(10);
+        setNumberReps(2);
     }
 
 
@@ -39,6 +44,13 @@ const FastTimer = () => {
               if (seconds ==1){
                   if (reps ==0) {
                     history.push("/slowtimer");
+                    setValue({
+                        ...value, 
+                        hello: 'aylor'
+
+                        // next how does the chart want to receive the info?
+                        // how to translate 
+                    })
                   } else {
                       // reseting seconds to a different value
                       setSeconds(MAXSECONDS);
@@ -63,16 +75,18 @@ const FastTimer = () => {
     return (
         <div className='app'>
         
-        <Link to="/progress">HOME</Link>
-        <Link to="#">TIMER-FAST</Link>
-        <Link to="/guide">GUIDE</Link>
+        <nav>
+        HOME 
+        TIMER-FAST     
+        GUIDE
+        </nav>
         
 
             <div className="time">
                 <div className="row">
-                    <h3>{activity}</h3>
+                    <h5>{activity}</h5>
                     <h1>{seconds}</h1>
-                    <h3>{reps} reps to go</h3>
+                    <h5>{reps} reps to go</h5>
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
                     {isActive ? 'Pause' : 'Start'}
                     </button>

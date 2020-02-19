@@ -41,6 +41,7 @@ const SlowTimer = () => {
           interval = setInterval(() => {
               if (seconds ==0){
                   if (reps ==0) {
+                      // send to progress page when done with reps
                     history.push("/progress");
                   } else {
                       // reseting seconds to a different value
@@ -65,15 +66,17 @@ const SlowTimer = () => {
 
     return (
         <div className='app'>
-        <Link to="/progress">HOME</Link>
-        <Link to="#">TIMER-SLOW</Link>
-        <Link to="/guide">GUIDE</Link>
+        <nav>
+        HOME 
+        TIMER-FAST     
+        GUIDE
+        </nav>
 
             <div className="time">
                 <div className="row">
-                    <h1>{activity}</h1>
+                    <h5>{activity}</h5>
                     <h1>{seconds}</h1>
-                    <h3>{reps} reps to go</h3>
+                    <h5>{reps} reps to go</h5>
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
                     {isActive ? 'Pause' : 'Start'}
                     </button>

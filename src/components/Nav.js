@@ -9,7 +9,6 @@ export default function Nav() {
         <div>
     <Link to="/">HOME</Link>
     <Link to="/guide">GUIDE</Link>
-
         </div>
     
     );

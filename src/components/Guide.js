@@ -4,24 +4,32 @@ import {
     Link
   } from "react-router-dom";
 
-// destructuring version 
 export default function Guide() {
     return(
-        <div>
+        <div className='app'>
+
+        <nav>
+        HOME      
+        GUIDE
+        </nav>
+
     
 <p>
 First, slightly squeeze your pelvic floor 
-And take a few steps. Notice how this 
-Locks up your jaws and hips?
+and take a few steps. Notice how this 
+locks up your jaws and hips?
 </p>
 
 <p>
 The, pull up, and hold (a Kegel!) you should
-Feel a tightening around your vagina, 
-Though try not to tighten your butt or 
-Upper belly muscles. Like you’re cutting 
-Off you pee midstream. 
+feel a tightening around your vagina, 
+though try not to tighten your butt or 
+upper belly muscles. Like you’re cutting 
+off you pee midstream. 
 </p>
+
+
+<button class="circle">START</button>
 
 <p>
 Then let go of the muscles. Stand down 
@@ -37,12 +45,6 @@ Control how me experience stress
 <p>
 - via loroxburgh
 </p>
-    
-
-    <Link to="/fasttimer">START</Link>
-
         </div>
-
-
     );
 }

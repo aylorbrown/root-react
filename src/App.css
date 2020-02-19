@@ -19,10 +19,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 
 @font-face {
   font-family: Toren Mono;
@@ -56,6 +52,8 @@ body {
   justify-content: center;
 }
 
+
+
 a {
   text-decoration: none;
   color: #1c1aa9;
@@ -68,13 +66,43 @@ a {
 }
 
 p {
-font-size: 36px;
-
+  text-align: justify;
+  font-size: 36px;
   width: 600px;
+}
+
+p.activity {
+  font-size: 14px;
+}
+
+p.reps {
+  font-size: 14px; 
 }
 
 h1, h3 {
   color: #1c1aa9;
+}
+
+nav {
+  flex-direction: row;
+  
+  width: 100%;
+  font-size: 24px;
+  border: 1px solid #1c1aa9;
+  margin-top: 20px;
+}
+
+
+
+.circle {
+  height: 600px;
+  width: 600px;
+  font-size: 64px;
+  border-radius: 50%;
+  background-color: #1c1aa9;
+  color: white;
+
+  border: 1px solid black;
 }
 
 .app {
@@ -86,12 +114,13 @@ h1, h3 {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #1c1aa9;
 }
 
 .time {
+  width: 600px;
   font-size: 3rem;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .button {

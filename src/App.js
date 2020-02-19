@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -18,9 +18,16 @@ import Nav from './components/Nav';
 
 
 
+export default function AppRouter() {
+  const [value, setValue] = useState({});
 
+  useEffect(() => {
+    let savedData = JSON.parse(
+        localStorage.getItem('reps') || {}
+    ) 
+  setValue(savedData);
+}, []);
 
-function App() {
   return (
     <Router>
       <div>
@@ -40,21 +47,33 @@ function App() {
         <Guide />
       </Route>
 
+
       <Route path="/progress">
-        <Progress />
+        <Progress 
+        value={value}
+        />
       </Route>
 
       <Route path="/progresschart">
-        <ProgressChart />
+        <ProgressChart 
+        value={value}
+        />
       </Route>
 
       <Route path="/fasttimer">
-        <FastTimer />
+        <FastTimer 
+        value={value}
+        setValue={setValue}/>
       </Route>
 
       <Route path="/slowtimer">
-        <SlowTimer />
+        <SlowTimer 
+        value={value}
+        setValue={setValue}
+        />
       </Route>
+
+
 
       <Route path="/nav">
         <Nav />
@@ -68,4 +87,3 @@ function App() {
   );
 }
 
-export default App;
