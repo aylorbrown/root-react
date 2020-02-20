@@ -19,6 +19,7 @@ import Nav from './components/Nav';
 
 
 export default function AppRouter() {
+  // use useState for gloabl state 
   const [value, setValue] = useState({});
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function AppRouter() {
         <Guide />
       </Route>
 
-
+      {/* use React Router for gloabl state  */}
       <Route path="/progress">
         <Progress 
         value={value}

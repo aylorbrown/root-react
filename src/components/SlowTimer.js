@@ -8,7 +8,12 @@ import {
 
 
 
-const SlowTimer = () => {
+const SlowTimer = (
+    {
+        value, 
+        setValue
+    }
+) => {
     const MAXSECONDS = 1;
     // initialize four states - seconds, isActive, reps, activity. Seconds will
     // store the value of the timer, isActive will store the 
@@ -43,6 +48,10 @@ const SlowTimer = () => {
                   if (reps ==0) {
                       // send to progress page when done with reps
                     history.push("/progress");
+                    setValue({
+                        ...value, 
+                        hello:'aylor'
+                    })
                   } else {
                       // reseting seconds to a different value
                       setSeconds(MAXSECONDS);
