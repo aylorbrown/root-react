@@ -61,9 +61,7 @@ const SlowTimer = (
                           //get the day number, where in array you are increasing 
                           // return the day of the week 
                           value = tempValue
-                          
                       )
-                    
                   } else {
                       // reseting seconds to a different value
                       setSeconds(MAXSECONDS);

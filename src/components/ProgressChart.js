@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import ReactDOM from 'react-dom';
-import { VictoryBar, VictoryAxis, VictoryGroup, VictoryChart } from "victory";
+import { VictoryBar, VictoryAxis, VictoryContainer, VictoryChart } from "victory";
 import UserContext from './UserContext';
 
 
@@ -49,6 +49,10 @@ export default function ProgressChart() {
 
         <VictoryChart
         style={{ parent: { maxWidth: "100%" } }}
+        domain={{y: [0, 10]}}
+        height={600}
+        width={600}
+        containerComponent={<VictoryContainer responsive={false}/>}
         >
 
         <VictoryAxis
@@ -66,6 +70,7 @@ export default function ProgressChart() {
         data={value}
         x={'day'}
         y={'time'}
+        
         />
 
         </VictoryChart>

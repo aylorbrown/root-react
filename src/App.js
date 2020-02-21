@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+
 
 // import { Provider } from 'react-redux';
 import FastTimer from './components/FastTimer';
@@ -18,32 +18,20 @@ import UserContext from './components/UserContext';
 
 
 
-export default function AppRouter() {
+export default function AppRouter({ location }) {
   // use useState for gloabl state 
   const [value, setValue] = useState(
     [
-      {day: 7, time: 0},
-      {day: 1, time: 0},
-      {day: 2, time: 0},
-      {day: 3, time: 0},
-      {day: 4, time: 0},
+      {day: 7, time: 10},
+      {day: 1, time: 5},
+      {day: 2, time: 5},
+      {day: 3, time: 10},
+      {day: 4, time: 5},
       {day: 5, time: 0},
       {day: 6, time: 0}
     ]
   );
-  // const [value, setValue] = useState(
-  //   [
-  //     //mon index 0
-  //     {time: 5},
-  //     {time: 6},
-  //     {time: 4},
-  //     {time: 1},
-  //     {time: 4},
-  //     {time: 15},
-  //     {time: 10}
-  //   ]
-  // );
-
+ 
 //   useEffect(() => {
 //     let savedData = JSON.parse(
 //         localStorage.getItem('reps') || {}
@@ -61,21 +49,20 @@ export default function AppRouter() {
     >
 
     <Router>
-      <div>
-        
-      {/* decides which Route element to render depending on the path prop */}
-      <Switch>
 
-      <Route exact path="/">
+      {/* decides which Route element to render depending on the path prop */}
+      <Switch location={location}>
+
+      <Route exact path="/" component={Splash}>
         <Splash />
       </Route>
 
-      <Route path="/guide">
+      <Route path="/guide" component={Guide}>
         <Guide />
       </Route>
 
       {/* use React Router for gloabl state  */}
-      <Route path="/progress">
+      <Route path="/progress" component={Progress}>
         <Progress 
         value={value}
         />
@@ -87,13 +74,13 @@ export default function AppRouter() {
         />
       </Route>
 
-      <Route path="/fasttimer">
+      <Route path="/fasttimer" component={FastTimer}>
         <FastTimer 
         value={value}
         setValue={setValue}/>
       </Route>
 
-      <Route path="/slowtimer">
+      <Route path="/slowtimer" component={SlowTimer}>
         <SlowTimer 
         value={value}
         setValue={setValue}
@@ -103,10 +90,11 @@ export default function AppRouter() {
 
 
       </Switch>
-      </div>
+      
 
     </Router>
     </UserContext.Provider>
   );
 }
+
 

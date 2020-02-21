@@ -19,7 +19,7 @@ const FastTimer = (
     // reps will store the value of the number of reps - stop timer after x many reps, activity toggles between squeeze and rest 
     const [seconds, setSeconds] = useState(MAXSECONDS);
     const [isActive, setIsActive] = useState(false);
-    const [reps, setNumberReps] = useState(2);
+    const [reps, setNumberReps] = useState(10);
     const [activity, setActivity] = useState('squeeze');
     let history = useHistory();
 
@@ -33,7 +33,7 @@ const FastTimer = (
     function reset() {
         setSeconds(MAXSECONDS);
         setIsActive(false);
-        setNumberReps(2);
+        setNumberReps(10);
     }
 
 
@@ -77,7 +77,6 @@ const FastTimer = (
         }
         return () => clearInterval(interval);
       }, [isActive, seconds, reps, activity]);
-
     return (
         <div className='app'>
         
@@ -107,7 +106,9 @@ const FastTimer = (
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
+
 
 export default FastTimer;
