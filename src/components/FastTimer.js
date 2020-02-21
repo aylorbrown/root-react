@@ -48,7 +48,7 @@ const FastTimer = (
                     var n = d.getDay();
                       let tempValue = [...value];
                       let currentDay = tempValue[n];
-                      currentDay.time ++
+                      currentDay.time += 50/60
                         console.log(currentDay);
                     history.push("/slowtimer");
                     setValue(
@@ -95,13 +95,15 @@ const FastTimer = (
                     {/* <h1>{seconds}</h1> */}
                     <h5>{reps} reps to go</h5>
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-                    {isActive ? 'Pause' : 'Start'}
+                    {isActive ? <img src='/pause.png'/> : <img src='/start.png'/>}
                     </button>
                     {/* <button className="button" onClick={reset}>
                         Pause
                     </button> */}
 
-                    <Link to="/slowtimer">NEXT</Link>
+                    
+
+                    <Link to="/slowtimer"><img src='/next.png'/></Link>
 
                 </div>
             </div>

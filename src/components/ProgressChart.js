@@ -1,6 +1,10 @@
-import React, { useEffect, useContext } from 'react';
-import ReactDOM from 'react-dom';
-import { VictoryBar, VictoryAxis, VictoryContainer, VictoryChart } from "victory";
+import React, { useContext } from 'react';
+import { 
+  VictoryBar, 
+  VictoryAxis, 
+  VictoryContainer, 
+  VictoryChart, 
+  VictoryLabel } from "victory";
 import UserContext from './UserContext';
 
 
@@ -48,7 +52,9 @@ export default function ProgressChart() {
       <div style={{ display: "flex", flexWrap: "wrap" }}>
 
         <VictoryChart
-        style={{ parent: { maxWidth: "100%" } }}
+        style={{ 
+          parent: { maxWidth: "100%" }
+        }}
         domain={{y: [0, 10]}}
         height={600}
         width={600}
@@ -58,19 +64,17 @@ export default function ProgressChart() {
         <VictoryAxis
         tickValues={[1, 2, 3, 4, 5, 6, 7]}
         tickFormat={['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']}
+      
         />
-        {/* </VictoryChart> */}
 
-        {/* <VictoryChart
-        style={{ parent: { maxWidth: "100%" } }}
-        width={900} height={900}
-        > */}
         <VictoryBar 
-        style={{ data: { fill: "#1c1aa9" } }}
         data={value}
+        barWidth={40}
+        style={{ 
+          data: { fill: "#1c1aa9" }
+        }}
         x={'day'}
-        y={'time'}
-        
+        y={'minutes'}
         />
 
         </VictoryChart>

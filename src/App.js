@@ -22,13 +22,13 @@ export default function AppRouter({ location }) {
   // use useState for gloabl state 
   const [value, setValue] = useState(
     [
-      {day: 7, time: 10},
-      {day: 1, time: 5},
-      {day: 2, time: 5},
-      {day: 3, time: 10},
-      {day: 4, time: 5},
-      {day: 5, time: 0},
-      {day: 6, time: 0}
+      {day: 7, minutes: 2.25},
+      {day: 1, minutes: 4},
+      {day: 2, minutes: 3},
+      {day: 3, minutes: 2},
+      {day: 4, minutes: 1},
+      {day: 5, minutes: 0},
+      {day: 6, minutes: 1.5}
     ]
   );
  

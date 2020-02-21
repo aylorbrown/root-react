@@ -40,47 +40,61 @@ const SlowTimer = (
         setActivity();
     }
 
+    
     // detects when isActive is true and start the timer inside that function 
     useEffect(() => {
         let interval = null;
-        if (isActive) {
-          interval = setInterval(() => {
-              if (seconds ==0){
-                  if (reps ==0) {
-                    // to get day of week 
-                    var d = new Date();
-                    var n = d.getDay();//5
-                      let tempValue = [...value];
-                      let currentDay = tempValue[n];
-                      currentDay.time ++
-                        console.log(currentDay);
-                        // send to progress page when done with reps                    
-                    history.push("/progress");
-                      setValue(
-                          //increase time for the day 
-                          //get the day number, where in array you are increasing 
-                          // return the day of the week 
-                          value = tempValue
-                      )
-                  } else {
-                      // reseting seconds to a different value
-                      setSeconds(MAXSECONDS);
-                      // resets the number of reps, countdowns number of reps 
-                      setNumberReps(reps => reps - 1);
-                      // reset activity
-                      if (activity == 'rest') {
-                          setActivity('squeeze');
-                        } else {
-                            setActivity('rest');
-                      }
-                    // clearInterval(interval);
-                  }
-              } else {
-                setSeconds(seconds => seconds - 1);
-              }
-          }, 1000);
+        let littleTimer = null;
+
+        let countDown = () => {
+            if (seconds ==0){
+                if (reps ==0) {
+                  // to get day of week 
+                  var d = new Date();
+                  var n = d.getDay();//5
+                    let tempValue = [...value];
+                    let currentDay = tempValue[n];
+                    currentDay.time += 25/60
+                      console.log(currentDay);
+                      // send to progress page when done with reps                    
+                  history.push("/progress");
+                    setValue(
+                        //increase time for the day 
+                        //get the day number, where in array you are increasing 
+                        // return the day of the week 
+                        value = tempValue
+                    )
+                } else {
+                    // reseting seconds to a different value
+                    setSeconds(MAXSECONDS);
+                    // resets the number of reps, countdowns number of reps 
+                    setNumberReps(reps => reps - 1);
+                    // reset activity
+                    if (activity == 'rest') {
+                        setActivity('squeeze');
+                      } else {
+                          setActivity('rest');
+                    }
+                }
+            } else {
+              setSeconds(seconds => seconds - 1);
+            }
         }
-        return () => clearInterval(interval);
+        if (isActive) {
+            
+          interval = setInterval(countDown, 1000);
+          console.log('we are creating interval');
+
+          // 2nd set interval
+            if (seconds == 0) {
+              setSeconds(MAXSECONDS);
+              countDown();
+            }
+        }
+        return () => {
+            clearInterval(interval); 
+            clearInterval(littleTimer);
+        }
       }, [isActive, seconds, reps, activity]);
 
     return (
@@ -98,7 +112,7 @@ const SlowTimer = (
                     <button className={activity == 'squeeze'? 'circle-timer-squeeze' : 'circle-timer-rest'}>{seconds}</button>
                     <h5>{reps} reps to go</h5>
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-                    {isActive ? 'Pause' : 'Start'}
+                    {isActive ? <img src='/pause.png'/> : <img src='/start.png'/>}
                     </button>
                     {/* <button className="button" onClick={reset}>
                         Pause
@@ -108,8 +122,5 @@ const SlowTimer = (
         </div>
     )
 }
-
-
-/// when the reps are done route to the progress page 
 
 export default SlowTimer;

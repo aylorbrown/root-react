@@ -182,9 +182,7 @@ nav.guide {
   padding: .6rem 1.5rem;
   margin: .4rem;
   border-radius: 3px;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: .8rem;
+
   border-style: groove;
 }
 
@@ -196,23 +194,16 @@ nav.guide {
 
 .button-primary:hover {
   background-color: #d45544;
-  border: 1px solid #1b1f2b;
 }
 
 .button-primary-active {
-  font-family: 'Suez One', serif;
-  font-size: 24px;
   background-color: #fc715e;
-  border: 1px solid #d45544;
-  color: #1c1aa9;
+  border: 1px solid #fc715e;
 }
 
 .button-primary-inactive {
-  font-family: 'Suez One', serif;
-  font-size: 24px;
   background-color: #fc715e;
-  border: 1px solid #d45544;
-  color: #1c1aa9;
+  border: 1px solid #fc715e;
 }
 
 
