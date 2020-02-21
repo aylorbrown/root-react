@@ -1,4 +1,5 @@
 import React from 'react'; 
+import SplashCircle from './SplashCircle';
 
 import {
     Link
@@ -8,9 +9,9 @@ export default function Guide() {
     return(
         <div className='app'>
 
-        <nav>
-        HOME      
-        GUIDE
+        <nav className='guide'>
+        <Link to="/progress">HOME</Link>
+        <Link to="#">GUIDE</Link>
         </nav>
 
     
@@ -28,9 +29,9 @@ upper belly muscles. Like you’re cutting
 off you pee midstream. 
 </p>
 
+<Link to="/fasttimer"><SplashCircle /></Link>
 
-<button class="circle">START</button>
-
+{/* <Link to='/fasttimer'><button class="circle">START</button></Link> */}
 <p>
 Then let go of the muscles. Stand down 
 Though you feet and notice how much 

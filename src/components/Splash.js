@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; 
-import {useSpring, animated} from 'react-spring'
+import React from 'react'; 
+// import {useSpring, animated} from 'react-spring'
 import SplashCircle from './SplashCircle'
 
 import {
@@ -8,10 +8,14 @@ import {
 
 export default function Splash() {
     return(
-        <div>
+        <div className='root'>
         <h1>ROOT</h1>
         
-        <SplashCircle onClick='/guide'/>
+        <Link to="/guide"><SplashCircle /></Link>
+
+
+
+        {/* <SplashCircle /> */}
     {/* <button class="circle-splash">START</button> */}
         </div>
     );

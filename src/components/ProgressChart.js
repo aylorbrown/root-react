@@ -1,46 +1,76 @@
-import React, { PureComponent } from 'react';
-import {
-  BarChart, Bar, XAxis
-} from 'recharts';
+import React, { useEffect, useContext } from 'react';
+import ReactDOM from 'react-dom';
+import { VictoryBar, VictoryAxis, VictoryGroup, VictoryChart } from "victory";
+import UserContext from './UserContext';
 
 
 
-const data = [
-    {
-      name: 'Mon', uv: 4000, pv: 2400, amt: 2400,
-    },
-    {
-      name: 'Tues', uv: 3000, pv: 1398, amt: 2210,
-    },
-    {
-      name: 'Wed', uv: 2000, pv: 9800, amt: 2290,
-    },
-    {
-      name: 'Thur', uv: 2780, pv: 3908, amt: 2000,
-    },
-    {
-      name: 'Fri', uv: 1890, pv: 4800, amt: 2181,
-    },
-    {
-      name: 'Sat', uv: 2390, pv: 3800, amt: 2500,
-    },
-    {
-      name: 'Sun', uv: 3490, pv: 4300, amt: 2100,
-    },
-  ];
-  
-  export default class ProgressChart extends PureComponent {
-    static jsfiddleUrl = 'https://jsfiddle.net/alidingling/9kd8rssL/';
-  
-    render() {
-      return (
-        <BarChart width={450} height={120} data={data}>
-          <Bar dataKey="uv" fill="#1c1aa9" />
-          <XAxis dataKey="name" />
-        </BarChart>
-      );
-    }
-  }
+// static version - create a default 
+// move static data pass default value in app
+// look at output component 
+
+// get date with if/else aka switch
+// const dayNumber = dayNumber.getDay();
+
+// switch (dayNumber) {
+//   case 0:
+//     //Monday
+//     data['Mon'] += 1
+//     break;
+//   case 1:
+//     //Tuesday
+//     data['Tues'] += 1
+//     break;
+//   case 2:
+//     data['Wed'] += 1
+//     break;
+//   case 3:
+//     data['Thurs'] += 1
+//     break;
+//   case 4:
+//     data['Fri'] += 1
+//     break;
+//   case 5:
+//     data['Sat'] += 1
+//     break;
+//   case 6:
+//     data['Sun'] += 1
+//     break;
+// }
 
 
-  
+
+
+export default function ProgressChart() {
+  const {value} = useContext(UserContext);
+
+    return (
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+
+        <VictoryChart
+        style={{ parent: { maxWidth: "100%" } }}
+        >
+
+        <VictoryAxis
+        tickValues={[1, 2, 3, 4, 5, 6, 7]}
+        tickFormat={['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']}
+        />
+        {/* </VictoryChart> */}
+
+        {/* <VictoryChart
+        style={{ parent: { maxWidth: "100%" } }}
+        width={900} height={900}
+        > */}
+        <VictoryBar 
+        style={{ data: { fill: "#1c1aa9" } }}
+        data={value}
+        x={'day'}
+        y={'time'}
+        />
+
+        </VictoryChart>
+      </div>
+    );
+}
+
+

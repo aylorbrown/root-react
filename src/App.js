@@ -14,29 +14,55 @@ import Splash from './components/Splash';
 import Guide from './components/Guide';
 import Progress from './components/Progress';
 import ProgressChart from './components/ProgressChart';
-import Nav from './components/Nav';
+import UserContext from './components/UserContext';
 
 
 
 export default function AppRouter() {
   // use useState for gloabl state 
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState(
+    [
+      {day: 7, time: 0},
+      {day: 1, time: 0},
+      {day: 2, time: 0},
+      {day: 3, time: 0},
+      {day: 4, time: 0},
+      {day: 5, time: 0},
+      {day: 6, time: 0}
+    ]
+  );
+  // const [value, setValue] = useState(
+  //   [
+  //     //mon index 0
+  //     {time: 5},
+  //     {time: 6},
+  //     {time: 4},
+  //     {time: 1},
+  //     {time: 4},
+  //     {time: 15},
+  //     {time: 10}
+  //   ]
+  // );
 
-  useEffect(() => {
-    let savedData = JSON.parse(
-        localStorage.getItem('reps') || {}
-    ) 
-  setValue(savedData);
-}, []);
+//   useEffect(() => {
+//     let savedData = JSON.parse(
+//         localStorage.getItem('reps') || {}
+//     ) 
+//   setValue(savedData);
+// }, []);
 
   return (
+    // provides information for every component using provider 
+    <UserContext.Provider
+      value={{
+        value, 
+        setValue
+      }}
+    >
+
     <Router>
       <div>
-        {/* <li><Link to="/timer">START</Link></li> */}
-        {/* <li><Link to="/guide">GUIDE</Link></li>
-        <li><Link to="/progress">PROGRESS</Link></li> */}
-      {/* <Timer /> */}
-
+        
       {/* decides which Route element to render depending on the path prop */}
       <Switch>
 
@@ -76,15 +102,11 @@ export default function AppRouter() {
 
 
 
-      <Route path="/nav">
-        <Nav />
-      </Route>
-
-
       </Switch>
       </div>
 
     </Router>
+    </UserContext.Provider>
   );
 }
 

@@ -5,7 +5,9 @@ import React from 'react';
 import { createContext } from 'react';
 
 // pass initial value 
-export const UserContext = createContext(null);
+const UserContext = createContext(null);
+
+export default UserContext;
 
 // functions to  save data and load data 
 

@@ -13,10 +13,10 @@ const FastTimer = (
     }
 ) => {
     const MAXSECONDS = 5;
-    // initialize three states - seconds, isActive, reps. Seconds will
+    // initialize four states - seconds, isActive, reps, activity. Seconds will
     // store the value of the timer, isActive will store the 
-    // timer's state for whether it is currentlu timing or paused, 
-    // reps will store the value of the number of reps - stop timer after x many reps 
+    // timer's state for whether it is currently timing or paused, 
+    // reps will store the value of the number of reps - stop timer after x many reps, activity toggles between squeeze and rest 
     const [seconds, setSeconds] = useState(MAXSECONDS);
     const [isActive, setIsActive] = useState(false);
     const [reps, setNumberReps] = useState(2);
@@ -43,14 +43,20 @@ const FastTimer = (
           interval = setInterval(() => {
               if (seconds ==1){
                   if (reps ==0) {
+                      // to get day of week 
+                    var d = new Date();
+                    var n = d.getDay();
+                      let tempValue = [...value];
+                      let currentDay = tempValue[n];
+                      currentDay.time ++
+                        console.log(currentDay);
                     history.push("/slowtimer");
-                    setValue({
-                        ...value, 
-                        hello: 'aylor'
-
-                        // next how does the chart want to receive the info?
-                        // how to translate 
-                    })
+                    setValue(
+                        //increase time for the day 
+                          //get the day number, where in array you are increasing 
+                          // return the day of the week 
+                          value = tempValue
+                    )
                   } else {
                       // reseting seconds to a different value
                       setSeconds(MAXSECONDS);
@@ -75,17 +81,19 @@ const FastTimer = (
     return (
         <div className='app'>
         
-        <nav>
-        HOME 
-        TIMER-FAST     
-        GUIDE
+        <nav className='guide'>
+        <Link to="/progress">HOME</Link>
+        <Link to="#">TIMER</Link>    
+        <Link to="/guide">GUIDE</Link>
         </nav>
         
 
             <div className="time">
                 <div className="row">
                     <h5>{activity}</h5>
-                    <h1>{seconds}</h1>
+                    <button className={activity == 'squeeze'? 'circle-timer-squeeze' : 'circle-timer-rest'}>{seconds}</button>
+                    
+                    {/* <h1>{seconds}</h1> */}
                     <h5>{reps} reps to go</h5>
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
                     {isActive ? 'Pause' : 'Start'}
@@ -93,15 +101,13 @@ const FastTimer = (
                     {/* <button className="button" onClick={reset}>
                         Pause
                     </button> */}
-                    <Link to="/slowtimer">Next</Link>
+
+                    <Link to="/slowtimer">NEXT</Link>
 
                 </div>
             </div>
         </div>
     )
 }
-
-
-/// when the reps are done route to the progress page 
 
 export default FastTimer;

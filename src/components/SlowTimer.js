@@ -8,6 +8,7 @@ import {
 
 
 
+
 const SlowTimer = (
     {
         value, 
@@ -46,12 +47,23 @@ const SlowTimer = (
           interval = setInterval(() => {
               if (seconds ==0){
                   if (reps ==0) {
-                      // send to progress page when done with reps
+                    // to get day of week 
+                    var d = new Date();
+                    var n = d.getDay();//5
+                      let tempValue = [...value];
+                      let currentDay = tempValue[n];
+                      currentDay.time ++
+                        console.log(currentDay);
+                        // send to progress page when done with reps                    
                     history.push("/progress");
-                    setValue({
-                        ...value, 
-                        hello:'aylor'
-                    })
+                      setValue(
+                          //increase time for the day 
+                          //get the day number, where in array you are increasing 
+                          // return the day of the week 
+                          value = tempValue
+                          
+                      )
+                    
                   } else {
                       // reseting seconds to a different value
                       setSeconds(MAXSECONDS);
@@ -75,16 +87,17 @@ const SlowTimer = (
 
     return (
         <div className='app'>
-        <nav>
-        HOME 
-        TIMER-FAST     
-        GUIDE
+
+        <nav className='nav-timer'>
+        <Link to="/progress">HOME</Link>
+        <Link to="#">TIMER</Link>    
+        <Link to="/guide">GUIDE</Link>
         </nav>
 
             <div className="time">
                 <div className="row">
                     <h5>{activity}</h5>
-                    <h1>{seconds}</h1>
+                    <button className={activity == 'squeeze'? 'circle-timer-squeeze' : 'circle-timer-rest'}>{seconds}</button>
                     <h5>{reps} reps to go</h5>
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
                     {isActive ? 'Pause' : 'Start'}
@@ -92,8 +105,6 @@ const SlowTimer = (
                     {/* <button className="button" onClick={reset}>
                         Pause
                     </button> */}
-
-
                 </div>
             </div>
         </div>

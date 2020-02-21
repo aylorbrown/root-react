@@ -2,7 +2,12 @@
 npm install react-transition-group --save
 ```
 
-recharts (https://github.com/recharts/recharts)
+victory (https://github.com/FormidableLabs/victory)
 ```javascript 
-npm install recharts
+npm install victory
+```
+
+styled components 
+```javascript
+npm install --save styled-components
 ```
