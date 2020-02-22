@@ -62,8 +62,12 @@ export default function ProgressChart() {
         >
 
         <VictoryAxis
+        style={{
+          axis: {stroke: '#fc715e'}, 
+          tickLabels: {stroke: '#1c1aa9', fontSize: 24}
+        }}
         tickValues={[1, 2, 3, 4, 5, 6, 7]}
-        tickFormat={['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']}
+        tickFormat={['M', 'T', 'W', 'T', 'F', 'S', 'S']}
       
         />
 

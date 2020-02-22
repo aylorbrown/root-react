@@ -22,7 +22,10 @@
 /*  new  */
 
 body {
-  font-family: 'Space Grotesk Regular';
+  /* font-family: 'Karla' ; */
+  font-family: 'gopher', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
   background-color: #fc715e;
   color: #1c1aa9;
@@ -45,11 +48,15 @@ body {
 } */
 
 p {
-  font-family: 'Space Grotesk Regular';
+  /* font-family: 'Karla'; */
+  font-family: 'gopher', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
   text-align: justify;
   font-size: 36px;
   width: 600px;
+
 }
 
 p.activity {
@@ -71,7 +78,11 @@ h1 {
 
 
 a {
-  font-family: 'Suez One', serif;
+  /* font-family: 'Karla'; */
+  font-family: 'gopher', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
   font-size: 36px;
   text-decoration: none;
   color: #1c1aa9;
@@ -102,6 +113,14 @@ nav.guide {
   flex-direction: row; 
   width: 100%;
   margin-top: 40px;
+}
+
+.splash-circle-guide {
+  position: sticky;
+  top: 50px;
+  shape-outside: border-box;
+  border-radius: 50%;
+
 }
 
 
@@ -139,6 +158,8 @@ nav.guide {
 
   font-size: 36px;
   color: white;
+
+  transition: width 2s;
 }
 
 .circle-timer-rest {

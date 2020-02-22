@@ -18,10 +18,28 @@ Styled Components
 npm install --save styled-components
 ```
 
+React Spring (https://github.com/react-spring/react-spring)
+```javascript
+npm install react-spring
+```
+
 ### APIs used 
 
 <Switch>
 <Link>
 <BrowserRouter>
 <Route>
+
+
+### Project description 
+
+
+### Challenges 
+
+### What's next 
+
+- React native 
+
+### Author 
+Aylor Brown 
 

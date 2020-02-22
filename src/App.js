@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
+import { 
+  CSSTransition, 
+  TransitionGroup,
+} from 'react-transition-group';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  withRouter,
 } from "react-router-dom";
 
 
@@ -49,9 +54,9 @@ export default function AppRouter({ location }) {
     >
 
     <Router>
-
+      
       {/* decides which Route element to render depending on the path prop */}
-      <Switch location={location}>
+      <Switch>
 
       <Route exact path="/" component={Splash}>
         <Splash />
@@ -90,11 +95,9 @@ export default function AppRouter({ location }) {
 
 
       </Switch>
-      
 
     </Router>
     </UserContext.Provider>
   );
 }
-
 
