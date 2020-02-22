@@ -3,42 +3,36 @@
 ![Kegel](https://media.giphy.com/media/3ohhwHkDJfIO8tlgS4/giphy.gif)
 
 ### Project description 
+
 ROOT is a pelvic floor exercise app for people with vaginas. Tired of women's health app -- in terms of a woman body in service of others - heterosexual sex and childbirth - I created ROOT to center the importance of a strong pelvic floor in terms of a woman's mental and physical health and quality of life. 
 
 The first iteration of ROOT is a simple kegel exercise. It is essentially a counter app built in React. 
 
-The name ROOT comes from the root chakra. 
+The name ROOT is reference to the the root chakra. 
 
 
 ### Libraries used:
 
 React Router 
 
-Victory (https://github.com/FormidableLabs/victory)
+[Victory](https://github.com/FormidableLabs/victory)
 ```javascript 
 npm install victory
 ```
 
-Styled Components (https://github.com/styled-components/styled-components)
+[Styled Components](https://github.com/styled-components/styled-components)
 ```javascript
 npm install --save styled-components
 ```
 
-React Spring (https://github.com/react-spring/react-spring)
+[React Spring](https://github.com/react-spring/react-spring)
 ```javascript
 npm install react-spring
 ```
 
-### APIs used 
 
-<Switch>
-<Link>
-<BrowserRouter>
-<Route>
+![TraceyEllisRoss](https://media.giphy.com/media/BdVcN2CztJ4L6/giphy.gif)
 
-
-
-![DestroyComputer](https://media.giphy.com/media/WjhqatKJh5Kgw/giphy.gif)
 ### Challenges 
 
 I used React Hooks for this project which turned out to make everything a lot easier. Hooks lets you use state and other React features with writing a class. 
@@ -55,6 +49,7 @@ The biggest challenge was creating the countdown timer for the slow exercise. Th
 ```
 
 ![BlackLadySketchShow](https://media.giphy.com/media/XcLx833bdmXhYNGJ1B/giphy.gif)
+
 ### What's next
 
 - React native 
@@ -62,9 +57,9 @@ The biggest challenge was creating the countdown timer for the slow exercise. Th
 - Smooth Timer Animations 
 - Vibrations that correspond with reps 
 - Exercise Plan - user can customize amount of rep and length of time  
-- More exercises - Deep Squats with heel support, fascia ball
+- More exercises - Deep Squats with heel support, fascia ball, breathe using pc muscles 
 - Calm notifications (https://calmtech.com/)
 
 ### Author 
-Aylor Brown 
 
+[Aylor Brown](https://www.aylorbrown.com)
