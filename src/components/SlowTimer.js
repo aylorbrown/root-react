@@ -7,8 +7,6 @@ import {
   } from "react-router-dom";
 
 
-
-
 const SlowTimer = (
     {
         value, 
@@ -32,14 +30,6 @@ const SlowTimer = (
         setIsActive(!isActive);
     }
 
-    //  pauses the timer 
-    function reset() {
-        setSeconds(MAXSECONDS);
-        setIsActive(false);
-        setNumberReps(5);
-        setActivity();
-    }
-
     
     // detects when isActive is true and start the timer inside that function 
     useEffect(() => {
@@ -54,15 +44,14 @@ const SlowTimer = (
                   var n = d.getDay();//5
                     let tempValue = [...value];
                     let currentDay = tempValue[n];
-                    currentDay.time += 25/60
-                      console.log(currentDay);
+                    currentDay.minutes += 25/60
                       // send to progress page when done with reps                    
                   history.push("/progress");
                     setValue(
                         //increase time for the day 
                         //get the day number, where in array you are increasing 
                         // return the day of the week 
-                        value = tempValue
+                        value = tempValue  
                     )
                 } else {
                     // reseting seconds to a different value
@@ -83,7 +72,6 @@ const SlowTimer = (
         if (isActive) {
             
           interval = setInterval(countDown, 1000);
-          console.log('we are creating interval');
 
           // 2nd set interval
             if (seconds == 0) {

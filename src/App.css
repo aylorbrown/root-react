@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
 .App-header {
   background-color: #fc715e;
   min-height: 100vh;
@@ -19,10 +13,7 @@
   color: white;
 }
 
-/*  new  */
-
 body {
-  /* font-family: 'Karla' ; */
   font-family: 'gopher', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -36,19 +27,8 @@ body {
   justify-content: center;
 }
 
-/* a {
-  text-decoration: none;
-  color: #1c1aa9;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 36px;
-} */
 
 p {
-  /* font-family: 'Karla'; */
   font-family: 'gopher', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -57,14 +37,6 @@ p {
   font-size: 36px;
   width: 600px;
 
-}
-
-p.activity {
-  font-size: 14px;
-}
-
-p.reps {
-  font-size: 14px; 
 }
 
 h1, h3 {
@@ -78,9 +50,8 @@ h1 {
 
 
 a {
-  /* font-family: 'Karla'; */
   font-family: 'gopher', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
 
   font-size: 36px;
@@ -99,15 +70,6 @@ a {
   width: 600px;
 }
 
-/* nav {
-  flex-direction: row;
-  width: 100%;
-  font-size: 36px;
-  margin-top: 40px;
-
-  justify-content: space-between;
-} */
-
 /* guide */
 nav.guide {
   flex-direction: row; 
@@ -124,9 +86,7 @@ nav.guide {
 }
 
 
-
-
-
+/* timer circle */
 .circle {
   height: 400px;
   width: 400px;
@@ -188,17 +148,10 @@ nav.guide {
 .time {
   width: 600px;
   font-size: 3rem;
-  /* padding: 2rem; */
-
-  /* height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  background-color: #1c1aa9;
-  color: white;
-
-  border: 1px solid black; */
 }
 
+
+/* timer button */
 .button {
   padding: .6rem 1.5rem;
   margin: .4rem;
@@ -206,8 +159,6 @@ nav.guide {
 
   border-style: groove;
 }
-
-
 
 .button:focus {
   outline-width: 0;
@@ -230,7 +181,7 @@ nav.guide {
 
 
 
-/* beautiful circle animation */
+/* my beautiful circle animation */
 .card {
   width: 400px;
   height: 400px;

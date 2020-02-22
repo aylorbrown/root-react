@@ -15,9 +15,7 @@ export default function Progress() {
         <Link to="#">HOME</Link>    
         <Link to="/guide">GUIDE</Link>
         </nav>
-
-        {/* <h3>{value}</h3> */}
-        {/* css chart library here  */}
+        
         <ProgressChart />
     <Link to="/fasttimer">START</Link>
     </div>

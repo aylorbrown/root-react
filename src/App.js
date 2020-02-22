@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import { 
-  CSSTransition, 
-  TransitionGroup,
-} from 'react-transition-group';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  withRouter,
+  Route
 } from "react-router-dom";
 
 
@@ -27,13 +22,13 @@ export default function AppRouter({ location }) {
   // use useState for gloabl state 
   const [value, setValue] = useState(
     [
-      {day: 7, minutes: 2.25},
-      {day: 1, minutes: 4},
-      {day: 2, minutes: 3},
-      {day: 3, minutes: 2},
-      {day: 4, minutes: 1},
+      {day: 7, minutes: 0},
+      {day: 1, minutes: 0},
+      {day: 2, minutes: 0},
+      {day: 3, minutes: 0},
+      {day: 4, minutes: 0},
       {day: 5, minutes: 0},
-      {day: 6, minutes: 1.5}
+      {day: 6, minutes: 0}
     ]
   );
  

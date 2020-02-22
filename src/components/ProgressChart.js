@@ -7,44 +7,6 @@ import {
   VictoryLabel } from "victory";
 import UserContext from './UserContext';
 
-
-
-// static version - create a default 
-// move static data pass default value in app
-// look at output component 
-
-// get date with if/else aka switch
-// const dayNumber = dayNumber.getDay();
-
-// switch (dayNumber) {
-//   case 0:
-//     //Monday
-//     data['Mon'] += 1
-//     break;
-//   case 1:
-//     //Tuesday
-//     data['Tues'] += 1
-//     break;
-//   case 2:
-//     data['Wed'] += 1
-//     break;
-//   case 3:
-//     data['Thurs'] += 1
-//     break;
-//   case 4:
-//     data['Fri'] += 1
-//     break;
-//   case 5:
-//     data['Sat'] += 1
-//     break;
-//   case 6:
-//     data['Sun'] += 1
-//     break;
-// }
-
-
-
-
 export default function ProgressChart() {
   const {value} = useContext(UserContext);
 
@@ -74,9 +36,14 @@ export default function ProgressChart() {
         <VictoryBar 
         data={value}
         barWidth={40}
+        // labels={({y}) => `${y}`}
         style={{ 
-          data: { fill: "#1c1aa9" }
+          data: { fill: "#1c1aa9" },
+          labels: { fill: "white"}
         }}
+        labelComponent={<VictoryLabel dy={-10}/>}
+
+      
         x={'day'}
         y={'minutes'}
         />

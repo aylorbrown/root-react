@@ -29,54 +29,60 @@ const FastTimer = (
         setIsActive(!isActive);
     }
 
-    //  pauses the timer 
-    function reset() {
-        setSeconds(MAXSECONDS);
-        setIsActive(false);
-        setNumberReps(10);
-    }
-
-
     useEffect(() => {
-        let interval = null;
-        if (isActive) {
-          interval = setInterval(() => {
-              if (seconds ==1){
-                  if (reps ==0) {
-                      // to get day of week 
-                    var d = new Date();
-                    var n = d.getDay();
-                      let tempValue = [...value];
-                      let currentDay = tempValue[n];
-                      currentDay.time += 50/60
-                        console.log(currentDay);
-                    history.push("/slowtimer");
-                    setValue(
-                        //increase time for the day 
-                          //get the day number, where in array you are increasing 
-                          // return the day of the week 
-                          value = tempValue
-                    )
-                  } else {
-                      // reseting seconds to a different value
-                      setSeconds(MAXSECONDS);
-                      // resets the number of reps, countdowns number of reps 
-                      setNumberReps(reps => reps - 1);
-                      // reset activity
-                      if (activity == 'rest') {
-                          setActivity('squeeze');
-                        } else {
-                            setActivity('rest');
-                      }
-                    // clearInterval(interval);
-                  }
+      let interval = null;
+      let littleTimer = null;
+
+      let countDown = () => {
+          if (seconds ==1){
+              if (reps ==0) {
+                // to get day of week 
+                var d = new Date();
+                var n = d.getDay();//5
+                  let tempValue = [...value];
+                  let currentDay = tempValue[n];
+                  currentDay.minutes += 50/60
+                    console.log(currentDay);
+                    // send to progress page when done with reps                    
+                history.push("/slowtimer");
+                  setValue(
+                      //increase time for the day 
+                      //get the day number, where in array you are increasing 
+                      // return the day of the week 
+                      value = tempValue
+                  )
               } else {
-                setSeconds(seconds => seconds - 1);
+                  // reseting seconds to a different value
+                  setSeconds(MAXSECONDS);
+                  // resets the number of reps, countdowns number of reps 
+                  setNumberReps(reps => reps - 1);
+                  // reset activity
+                  if (activity == 'rest') {
+                      setActivity('squeeze');
+                    } else {
+                        setActivity('rest');
+                  }
               }
-          }, 1000);
-        }
-        return () => clearInterval(interval);
-      }, [isActive, seconds, reps, activity]);
+          } else {
+            setSeconds(seconds => seconds - 1);
+          }
+      }
+      if (isActive) {
+          
+        interval = setInterval(countDown, 1000);
+
+        // 2nd set interval
+          if (seconds == 0) {
+            setSeconds(MAXSECONDS);
+            countDown();
+          }
+      }
+      return () => {
+          clearInterval(interval); 
+          clearInterval(littleTimer);
+      }
+    }, [isActive, seconds, reps, activity]);
+
     return (
         <div className='app'>
         
@@ -89,11 +95,10 @@ const FastTimer = (
 
             <div className="time">
                 <div className="row">
-                    <h5>{activity}</h5>
+                    <h6>{activity}</h6>
                     <button className={activity == 'squeeze'? 'circle-timer-squeeze' : 'circle-timer-rest'}>{seconds}</button>
                     
-                    {/* <h1>{seconds}</h1> */}
-                    <h5>{reps} reps to go</h5>
+                    <h6>{reps} reps to go</h6>
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
                     {isActive ? <img src='/pause.png'/> : <img src='/start.png'/>}
                     </button>
