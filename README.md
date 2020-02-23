@@ -2,13 +2,20 @@
 
 ![Kegel](https://media.giphy.com/media/3ohhwHkDJfIO8tlgS4/giphy.gif)
 
+
 ### Project description 
 
-ROOT is a pelvic floor exercise app for people with vaginas. Tired of women's health app -- in terms of a woman body in service of others - heterosexual sex and childbirth - I created ROOT to center the importance of a strong pelvic floor in terms of a woman's mental and physical health and quality of life. 
+![SplashPage](public/splash-page.gif)
 
-The first iteration of ROOT is a simple kegel exercise. It is essentially a counter app built in React. 
+ROOT is a pelvic floor exercise app for people with vaginas. Tired of women's health apps that define kegels in terms of a woman using her body in service of others - heterosexual sex or childbirth -  I created ROOT to center the importance of a strong pelvic floor in terms of a woman's mental and physical health and quality of life. 
+
+The first iteration of ROOT is a simple kegel exercise. It is essentially a counter app built in React. There are two types - slow and fast. The slow exercise is 10 reps of squeeze and rest exerices, 5 seconds each.
+
+When the user finishes both the fast and slow exercise, they are redirected to the home page which has a bar chart that keeps track of their progress. 
 
 The name ROOT is reference to the the root chakra. 
+
+Women are 75% more likely to use digital health tools than men
 
 
 ### Libraries used:
@@ -34,6 +41,8 @@ npm install react-spring
 ![TraceyEllisRoss](https://media.giphy.com/media/BdVcN2CztJ4L6/giphy.gif)
 
 ### Challenges 
+
+![Timer](public/timer.gif)
 
 I used React Hooks for this project which turned out to make everything a lot easier. Hooks lets you use state and other React features with writing a class. 
 

@@ -80,13 +80,19 @@ nav.guide {
 .splash-circle-guide {
   position: sticky;
   top: 50px;
-  shape-outside: border-box;
   border-radius: 50%;
 
 }
 
 
-/* timer circle */
+/* timer  */
+
+
+.time {
+  width: 600px;
+  font-size: 3rem;
+}
+
 .circle {
   height: 400px;
   width: 400px;
@@ -119,7 +125,7 @@ nav.guide {
   font-size: 36px;
   color: white;
 
-  transition: width 2s;
+  transition: smooth;
 }
 
 .circle-timer-rest {
@@ -145,10 +151,7 @@ nav.guide {
   color: #1c1aa9;
 }
 
-.time {
-  width: 600px;
-  font-size: 3rem;
-}
+
 
 
 /* timer button */
@@ -192,6 +195,9 @@ nav.guide {
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
+
+  shape-outside:circle(50% at 100% 50%) 
+
 }
 
 .card:hover {

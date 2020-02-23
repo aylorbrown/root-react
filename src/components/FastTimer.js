@@ -99,9 +99,11 @@ const FastTimer = (
                     <button className={activity == 'squeeze'? 'circle-timer-squeeze' : 'circle-timer-rest'}>{seconds}</button>
                     
                     <h6>{reps} reps to go</h6>
+                   
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
                     {isActive ? <img src='/pause.png'/> : <img src='/start.png'/>}
                     </button>
+                   
                     {/* <button className="button" onClick={reset}>
                         Pause
                     </button> */}
