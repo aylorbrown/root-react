@@ -101,9 +101,9 @@ I used the ```useEffect()``` hook to determine when isActive is true to start th
 
 ![Timer](public/timer.gif)
 
-I initialized <interval> and <littleTimer> as a new variable intervals to null. If <isActive> is detected as true, then <interval> is assigned to a new interval and <countDown> runs every 1,000 milliseconds. 
+I initialized ```interval``` and ```littleTimer``` as a new variable intervals to null. If ```isActive``` is detected as true, then ```interval``` is assigned to a new interval and ```countDown``` runs every 1,000 milliseconds. 
 
-<countDown> is run if the timer hits 1.  
+```countDown``` is run if the timer hits 1.  
 
 To skip past the number 0, I added these three lines: 
 
@@ -114,7 +114,7 @@ To skip past the number 0, I added these three lines:
           }
 ```
 
-If the timer hits zero, <setSeconds> is called with 1 as an argument and <countDown> is called, starting the timer over. 
+If the timer hits zero, ```setSeconds``` is called with 1 as an argument and ```countDown``` is called, starting the timer over. 
 
 
  
