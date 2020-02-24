@@ -17,7 +17,8 @@ export default function Guide() {
 <div className='splash-circle-guide'>
 <Link to="/fasttimer"><SplashCircle /></Link>
 </div>
-    
+
+<div classNames="texts"> 
 <p>
 The pelvic floor is a group of muscles that attaches to the bones at the bottom of your pelvis. These muscles effectively form a hammock across the base of your pelvis that supports the internal organs above it. Having strong pelvic floor muscles give you proper control over our bladder and bowels, improve sexual performance and orgasm, help stabilize the hip joints, and act as a lymphatic pump for the pelvis. 
 </p>
@@ -34,6 +35,7 @@ Use ROOT to do a quick alignment reboot throughout your day. Think of these exer
 <p>
 - via @loroxburgh
 </p>
+</div> 
         </div>
     );
 }

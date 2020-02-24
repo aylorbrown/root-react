@@ -33,6 +33,12 @@ npm install --save styled-components
 npm install react-spring
 ```
 
+### API used:
+
+[JSON Bin](https://jsonbin.org/)
+A personal JSON store as a RESTful service 
+
+
 
 ![TraceyEllisRoss](https://media.giphy.com/media/BdVcN2CztJ4L6/giphy.gif)
 

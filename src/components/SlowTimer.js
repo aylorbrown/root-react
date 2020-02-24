@@ -7,7 +7,8 @@ import { useHistory } from "react-router-dom";
 const SlowTimer = (
     {
         value, 
-        setValue
+        setValue, 
+        saveData
     }
 ) => {
     const MAXSECONDS = 1;
@@ -42,7 +43,8 @@ const SlowTimer = (
                     let tempValue = [...value];
                     let currentDay = tempValue[n];
                     currentDay.minutes += 25/60
-                      // send to progress page when done with reps                    
+                      // send to progress page when done with reps 
+                saveData(tempValue)                   
                   history.push("/progress");
                     setValue(
                         //increase time for the day 
