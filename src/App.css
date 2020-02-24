@@ -123,9 +123,10 @@ nav.guide {
   border: 1px solid black;
 
   font-size: 36px;
-  color: white;
+  color: #f8f8ff;
 
-  transition: smooth;
+  transition: 1s;
+
 }
 
 .circle-timer-rest {
@@ -136,7 +137,9 @@ nav.guide {
   border: 1px solid black;
 
   font-size: 36px;
-  color: white;
+  color: #f8f8ff;
+
+  transition: 1s;
 }
 
 .app {
@@ -171,6 +174,7 @@ nav.guide {
   background-color: #d45544;
 }
 
+
 .button-primary-active {
   background-color: #fc715e;
   border: 1px solid #fc715e;
@@ -179,6 +183,16 @@ nav.guide {
 .button-primary-inactive {
   background-color: #fc715e;
   border: 1px solid #fc715e;
+}
+
+.next-arrow {
+  padding: .6rem 1.5rem;
+  margin: .4rem;
+  border-radius: 3px;
+}
+
+.next-arrow:hover {
+  background-color: #d45544;
 }
 
 
@@ -196,10 +210,11 @@ nav.guide {
   transition: box-shadow 0.5s;
   will-change: transform;
 
-  shape-outside:circle(50% at 100% 50%) 
-
+  /* shape-outside:circle(50% at 100% 50%)  */
 }
 
 .card:hover {
   box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
 }
+
+

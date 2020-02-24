@@ -122,7 +122,6 @@ If the timer hits zero, ```setSeconds``` is called with 1 as an argument and ```
 
 - React native 
 - React Router Page Transitions
-- Smooth Timer Animations 
 - Vibrations that correspond with reps 
 - Exercise Plan - user can customize amount of rep and length of time  
 - More exercises - Deep Squats with heel support, fascia ball, breathe using pc muscles 

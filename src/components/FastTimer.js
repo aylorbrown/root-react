@@ -103,7 +103,7 @@ const FastTimer = (
                     {isActive ? <img src='/pause.png'/> : <img src='/start.png'/>}
                     </button>
                    
-                    <Link to="/slowtimer"><img src='/next.png'/></Link>
+                    <Link to="/slowtimer" className="next-arrow"><img src='/next.png'/></Link>
 
                 </div>
             </div>
