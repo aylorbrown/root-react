@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import {
-    Link
-  } from "react-router-dom";
+
 
 
 const FastTimer = (
@@ -13,10 +11,11 @@ const FastTimer = (
     }
 ) => {
     const MAXSECONDS = 5;
-    // initialize four states - seconds, isActive, reps, activity. Seconds will
-    // store the value of the timer, isActive will store the 
-    // timer's state for whether it is currently timing or paused, 
-    // reps will store the value of the number of reps - stop timer after x many reps, activity toggles between squeeze and rest 
+    // initialize four states - seconds, isActive, reps, activity
+    // seconds storer the value of the timer
+    // isActive stores the timer's state for whether it is currently timing or paused, 
+    // reps stores the value of the number of reps - stop timer after x many reps
+    // activity toggles between squeeze and rest 
     const [seconds, setSeconds] = useState(MAXSECONDS);
     const [isActive, setIsActive] = useState(false);
     const [reps, setNumberReps] = useState(10);
@@ -24,7 +23,7 @@ const FastTimer = (
     let history = useHistory();
 
 
-    // combine start and pause into one function/ button
+    // combines start and pause into one function/ button
     function toggle() {
         setIsActive(!isActive);
     }
@@ -104,12 +103,6 @@ const FastTimer = (
                     {isActive ? <img src='/pause.png'/> : <img src='/start.png'/>}
                     </button>
                    
-                    {/* <button className="button" onClick={reset}>
-                        Pause
-                    </button> */}
-
-                    
-
                     <Link to="/slowtimer"><img src='/next.png'/></Link>
 
                 </div>
@@ -117,7 +110,5 @@ const FastTimer = (
         </div>
     );
 }
-
-
 
 export default FastTimer;

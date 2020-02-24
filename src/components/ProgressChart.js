@@ -36,7 +36,6 @@ export default function ProgressChart() {
         <VictoryBar 
         data={value}
         barWidth={40}
-        // labels={({y}) => `${y}`}
         style={{ 
           data: { fill: "#1c1aa9" },
           labels: { fill: "white"}

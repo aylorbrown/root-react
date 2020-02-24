@@ -32,7 +32,7 @@ Use ROOT to do a quick alignment reboot throughout your day. Think of these exer
 </p>
 
 <p>
-- via loroxburgh
+- via @loroxburgh
 </p>
         </div>
     );

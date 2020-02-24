@@ -43,7 +43,7 @@ I used React Hooks for this project which turned out to make everything a lot ea
 The biggest challenge was creating the countdown timer for the slow exercise. The user does one rep of squeeze and one rep of rest, but my countdown timer wanted to countdown from 1 to 0. This made the exercise a 2 second rep instead of a 1. 
 
 
-I used the ```useEffect()``` hook to determine when isActive is true to start the timer inside the function. I ended up building out ```useEffect()``` quite a bit and was able to add only 4 of code to solve the challenge of the 2nd interval (littleTimer)
+I used the ```useEffect()``` hook to determine when isActive is true to start the timer inside the function. I ended up building out ```useEffect()``` quite a bit and was able to add only 4 lines of code to solve the challenge of the 2nd interval (littleTimer)
 
 ```javascript
  useEffect(() => {
@@ -55,7 +55,7 @@ I used the ```useEffect()``` hook to determine when isActive is true to start th
                 if (reps ==0) {
                 // to get day of week 
                 var d = new Date();
-                var n = d.getDay();//5
+                var n = d.getDay();
                   let tempValue = [...value];
                   let currentDay = tempValue[n];
                   currentDay.minutes += 50/60
@@ -66,7 +66,7 @@ I used the ```useEffect()``` hook to determine when isActive is true to start th
                       value = tempValue
                   )
               } else {
-                  // reseting seconds to a different value
+                  // reset seconds to a different value
                   setSeconds(MAXSECONDS);
                   // resets the number of reps
                   setNumberReps(reps => reps - 1);
@@ -101,9 +101,7 @@ I used the ```useEffect()``` hook to determine when isActive is true to start th
 
 ![Timer](public/timer.gif)
 
-I initialized ```interval``` and ```littleTimer``` as a new variable intervals to null. If ```isActive``` is detected as true, then ```interval``` is assigned to a new interval and ```countDown``` runs every 1,000 milliseconds. 
-
-```countDown``` is run if the timer hits 1.  
+I initialized ```interval``` and ```littleTimer``` as new variable intervals to null. If ```isActive``` is detected as true, then ```interval``` is assigned to a new interval and ```countDown``` run. 
 
 To skip past the number 0, I added these three lines: 
 

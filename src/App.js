@@ -6,8 +6,6 @@ import {
   Route
 } from "react-router-dom";
 
-
-// import { Provider } from 'react-redux';
 import FastTimer from './components/FastTimer';
 import SlowTimer from './components/SlowTimer';
 import Splash from './components/Splash';
@@ -18,8 +16,8 @@ import UserContext from './components/UserContext';
 
 
 
-export default function AppRouter({ location }) {
-  // use useState for gloabl state 
+export default function AppRouter() {
+  // uses useState for global state 
   const [value, setValue] = useState(
     [
       {day: 7, minutes: 0},
@@ -31,13 +29,6 @@ export default function AppRouter({ location }) {
       {day: 6, minutes: 0}
     ]
   );
- 
-//   useEffect(() => {
-//     let savedData = JSON.parse(
-//         localStorage.getItem('reps') || {}
-//     ) 
-//   setValue(savedData);
-// }, []);
 
   return (
     // provides information for every component using provider 
@@ -53,16 +44,16 @@ export default function AppRouter({ location }) {
       {/* decides which Route element to render depending on the path prop */}
       <Switch>
 
-      <Route exact path="/" component={Splash}>
+      <Route exact path="/">
         <Splash />
       </Route>
 
-      <Route path="/guide" component={Guide}>
+      <Route path="/guide">
         <Guide />
       </Route>
 
-      {/* use React Router for gloabl state  */}
-      <Route path="/progress" component={Progress}>
+      {/* use React Router for global state */}
+      <Route path="/progress">
         <Progress 
         value={value}
         />
@@ -74,21 +65,18 @@ export default function AppRouter({ location }) {
         />
       </Route>
 
-      <Route path="/fasttimer" component={FastTimer}>
+      <Route path="/fasttimer">
         <FastTimer 
         value={value}
         setValue={setValue}/>
       </Route>
 
-      <Route path="/slowtimer" component={SlowTimer}>
+      <Route path="/slowtimer">
         <SlowTimer 
         value={value}
         setValue={setValue}
         />
       </Route>
-
-
-
       </Switch>
 
     </Router>
